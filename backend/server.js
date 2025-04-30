@@ -101,7 +101,8 @@ app.post("/api/send-form", async (req, res) => {
     }
   });
   
-const PORT = 5001;
-app.listen(PORT, () => {
-  console.log(`Backend работает на http://localhost:${PORT}`);
-});
+  const PORT = process.env.PORT || 5001;
+  app.listen(PORT, () => {
+    console.log(`Backend работает на порту ${PORT}`);
+  });
+  

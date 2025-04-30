@@ -23,7 +23,7 @@ function ConfirmOrder() {
   
 const handleConfirm = async () => {
   try {
-    const response = await fetch("http://localhost:5001/api/send-email", {
+    const response = await fetch("https://aromeo-backend.onrender.com/api/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

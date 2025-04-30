@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop"; // ✅ nauja dalis
 
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="d-flex flex-column min-vh-100 bg-sand text-brown font-sans">
         <Navbar />
         <main className="flex-grow-1 pt-5 pt-md-4">

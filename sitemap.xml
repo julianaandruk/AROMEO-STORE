@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://aromeo.ru/</loc>
+    <loc>https://aromeo.store/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://aromeo.ru/flakony</loc>
+    <loc>https://aromeo.store/flakony</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://aromeo.ru/masla</loc>
+    <loc>https://aromeo.store/masla</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://aromeo.ru/parfyumeriya</loc>
+    <loc>https://aromeo.store/parfyumeriya</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://aromeo.ru/cart</loc>
+    <loc>https://aromeo.store/cart</loc>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://aromeo.ru/checkout</loc>
+    <loc>https://aromeo.store/checkout</loc>
     <priority>0.5</priority>
   </url>
 

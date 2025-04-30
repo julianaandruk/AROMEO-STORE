@@ -1,0 +1,982 @@
+/* FOOTER */
+.custom-footer {
+    background-color: #5c4033; /* ruda */
+    color: #f4e8d4;            /* smėlinė */
+    font-size: 0.95rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .custom-footer a {
+    color: #f4e8d4;
+    text-decoration: none;
+  }
+  
+  .custom-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mygtukai – suderinta su viso projekto spalvomis */
+  .btn-telegram {
+    background-color: #F5A623; /* oranžinė */
+    color: white;
+    border-radius: 2rem;
+    padding: 0.45rem 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    border: none;
+  }
+  
+  .btn-telegram:hover {
+    background-color: #d4840c;
+  }
+  
+  .btn-whatsapp {
+    background-color: #4CAF50; /* švelni žalia */
+    color: white;
+    border-radius: 2rem;
+    padding: 0.45rem 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    border: none;
+  }
+  
+  .btn-whatsapp:hover {
+    background-color: #3e9e43;
+  }
+  
+  /* Mygtukų išdėstymas mažesniuose ekranuose */
+  @media (max-width: 576px) {
+    .custom-footer .d-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .custom-footer .btn {
+      width: 100%;
+      max-width: 280px;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  /* NAVBAR */
+.custom-navbar {
+  background-color: #5c4033;
+  color: #f4e8d4;
+  z-index: 1050; /* virš visko */
+  width: 100%;
+  position: fixed; /* pridėta */
+  top: 0; 
+}
+
+.custom-navbar a {
+  color: #f4e8d4;
+  margin-right: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar a:hover {
+  color: #F5A623;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f4e8d4;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-link {
+  margin-right: 1rem;
+  color: #f4e8d4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #F5A623;
+}
+
+.active-link {
+  font-weight: bold;
+  color: #ffcc00; /* geltona spalva vietoj pabraukimo */
+}
+
+.burger-btn {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* 3 linijų burger meniu */
+.burger-icon {
+  width: 25px;
+  height: 2px;
+  background-color: #f4e8d4;
+  position: relative;
+  transition: 0.3s;
+}
+.burger-icon::before,
+.burger-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #f4e8d4;
+  left: 0;
+  transition: 0.3s;
+}
+.burger-icon::before {
+  top: -8px;
+}
+.burger-icon::after {
+  top: 8px;
+}
+.burger-icon.open {
+  background-color: transparent;
+}
+.burger-icon.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.burger-icon.open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobilus meniu - vertikaliai, dešinėje */
+.nav-links {
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.nav-links a {
+  display: block;
+  margin-bottom: 0.75rem;
+  text-align: right;
+  color: #f4e8d4;
+}
+
+/* Dideli ekranai – horizontaliai */
+@media (min-width: 992px) {
+  .nav-links {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1.5rem;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+  
+  
+   /* HOME PAGE */
+   /* --- BENDRASIS STILIUS --- */
+.hero-container {
+  background-image: url("/oil.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  color: white;
+  font-family: sans-serif;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content .brand {
+  color: #ffcc00;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(90deg, #ffcc00, #ffb700);
+  color: #000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(90deg, #e6b800, #cc9a00);
+}
+
+.hero-btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.hero-btn-outline:hover {
+  background: linear-gradient(90deg, #ffcc00, #ffb700);
+  color: #000;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.hero-btn-outline-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.hero-btn-outline-group .hero-btn {
+  min-width: 140px;
+  max-width: 180px;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- <480px: labai maži telefonai --- */
+@media (max-width: 479px) {
+  .hero-container {
+    padding-bottom: 8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  .hero-overlay {
+    align-items: center;
+    padding: 2rem 1rem 6rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* vienodas tarpas tarp visų mygtukų */
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.9rem;
+  }
+
+  .hero-btn-outline-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .hero-btn-outline-group .hero-btn {
+    width: 100%;       /* <- Pridėta */
+    max-width: 250px;  /* <- Pridėta kad atitiktų primary mygtuką */
+  }
+}
+
+
+
+/* --- 480–767px: vidutiniai telefonai --- */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero-container {
+    padding-bottom: 6rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .hero-overlay {
+    align-items: center;
+    padding: 2rem 1rem 5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-btn,
+  .hero-btn-outline-group .hero-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero-btn-outline-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+/* --- 768–1023px: planšetiniai portretu --- */
+/* --- 768–1023px: planšetiniai portretu --- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-container {
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    padding-bottom: 5rem;
+  }
+
+  .hero-overlay {
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    width: 180px;         /* fiksuotas plotis */
+    height: 50px;         /* fiksuotas aukštis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0;           /* kad tekstas tikrai būtų centre */
+  }
+
+  .hero-btn-outline-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .hero-btn-outline-group .hero-btn {
+    width: 180px;        /* vienodas kaip ir primary */
+    height: 50px;
+    white-space: normal; /* leidžia tekstui eiti į naują eilutę jei per ilgas */
+  }
+}
+
+
+
+/* --- 1024–1199px: planšetiniai kraštovaizdžiu ir maži laptopai --- */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.15rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    width: 190px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .hero-btn-outline-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .hero-btn-outline-group .hero-btn {
+    width: 190px;
+    height: 50px;
+    white-space: normal;
+  }
+}
+
+
+
+/* --- ≥1200px: dideli ekranai --- */
+@media (min-width: 1200px) {
+  .hero-container {
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 90%);
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    width: 200px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-btn-outline-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .hero-btn-outline-group .hero-btn {
+    width: 200px;
+    height: 55px;
+  }
+}
+
+
+  
+  
+  .buttons {
+    animation-delay: 0.9s;
+  }
+  
+  .text-brown {
+    color: #5C3A21;
+  }
+  
+  .bg-sand {
+    background-color: #f3e5d0;
+  }
+  
+  .border-brown {
+    border: 1px solid #5C3A21 !important;
+    box-shadow: none;
+  }
+  
+  .form-card {
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mygtukui – jei nori naudoti klasę vietoje inline stiliaus */
+  .btn-submit {
+    background-color: #F5A623;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+  
+  .btn-submit:hover {
+    background-color: #d4840c;
+  }
+  
+  .bg-brown {
+    background-color: #5C3A21 !important; /* Bootstrap override */
+  }
+  
+  .phone-input-group {
+    display: flex;
+    border: 1px solid #5C3A21;
+    border-radius: 0.5rem;
+    overflow: visible;
+    height: 38px;
+  }
+  
+  /* Įvedimo laukas */
+  .phone-input-group .form-control {
+    border: none !important;
+    box-shadow: none;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    height: 100%;
+  }
+  
+  /* Kairės pusės dropdown (vėliava) */
+  .phone-input-group .flag-dropdown {
+    background-color: #5C3A21 !important;
+    border: none !important;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    height: 100%;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Dropdown sąrašas */
+  .react-tel-input .country-list {
+    min-width: 260px;
+    z-index: 9999;
+    font-size: 14px;
+  }
+  
+  /* Šalis su atstumu vėliavai */
+  .react-tel-input .country-list .country {
+    padding-left: 48px !important;
+    position: relative;
+    line-height: 1.8;
+  }
+  
+  /* Vėliavos pozicija dropdown’e */
+  .react-tel-input .country-list .country .flag {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Hover efektas dropdown'e */
+  .react-tel-input .country-list .country:hover {
+    background-color: #f3e5d0;
+  }
+  
+/* PRODUKTU PUSLAPIS */
+  .text-brown {
+    color: #5C3A21;
+  }
+  
+  .text-orange {
+    color: #F5A623;
+  }
+  
+  .btn-orange {
+    background-color: #F5A623;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+  }
+  
+  .btn-orange:hover {
+    background-color: #d4840c;
+    color: white;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .product-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+  }
+  
+  .product-card .price {
+    color: #e69500;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+  
+  .product-card button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #000;
+  }
+  
+  .product-card button:hover {
+    background-color: #e6b800;
+  }
+  @media (max-width: 480px) {
+    .product-card {
+      padding: 0.75rem;
+      margin: 0.75rem auto;
+      max-width: 90%;
+    }
+  
+    .product-card h4 {
+      font-size: 0.95rem;
+    }
+  
+    .product-card .price {
+      font-size: 0.95rem;
+    }
+  
+    .product-card button {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 0.95rem;
+    }
+  }
+    
+  .btn-outline-orange {
+    border: 1px solid #f5a623;
+    color: #f5a623;
+    background-color: transparent;
+    transition: 0.3s ease;
+  }
+  
+  .btn-outline-orange:hover {
+    background-color: #f5a623;
+    color: #fff;
+  }
+  
+  
+
+/* CART */
+
+/* Pašalina rodykles iš skaičių įvedimo laukų (Chrome, Safari) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Pašalina rodykles iš skaičių laukų (Firefox) */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Krepšelio pagrindinis blokas, kad ištemptų puslapį */
+.cart-wrapper {
+  flex-grow: 1;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Produktų sąrašas (DIDESNI EMS ekranams) */
+.cart-list .list-group-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Produkto nuotrauka */
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Kiekio keitimo mygtukai */
+.cart-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Veiksmų mygtukai */
+.cart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Bendra suma */
+.cart-total {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Papildomas tarpas tarp krepšelio prekių */
+.cart-list li + li {
+  margin-top: 1rem;
+}
+
+/* ✅ RESPONSIVE DIZAINAS TIK MAŽIEMS EKRANAMS */
+@media (max-width: 576px) {
+  .cart-list .list-group-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .cart-item-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-list h5 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cart-list .text-muted {
+    font-size: 0.875rem;
+  }
+
+  .cart-qty-controls {
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .cart-qty-controls input {
+    width: 50px;
+    text-align: center;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .cart-actions button {
+    width: 100%;
+  }
+
+  .cart-total {
+    text-align: center;
+  }
+
+  .cart-wrapper {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .small-screen-cart-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* RESPONSIVE STILIUS VIDUTINIAMS EKRANAMS */
+@media (min-width: 577px) and (max-width: 991px) {
+  .cart-list .list-group-item {
+    flex-wrap: wrap;
+  }
+
+  .cart-qty-controls {
+    flex-wrap: nowrap;
+  }
+}
+
+
+
+
+.category-btn {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #f5a623;
+  background-color: transparent; /* ← skaidrus fonas */
+  color: #f5a623;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background-color: #f5a623;
+  color: #ffffff;
+}
+
+.category-btn.active {
+  background-color: #f5a623;
+  color: #ffffff;
+  border-color: #f5a623;
+}
+
+@media (max-width: 576px) {
+  .popup-message {
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+
+  .popup-message h5 {
+    font-size: 1rem;
+  }
+
+  .popup-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .popup-buttons button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Užtikrina, kad visas puslapis būtų bent 100vh ir footer būtų apačioje */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+
+.product-image {
+  width: 100%;
+  max-width: 400px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+@media (min-width: 992px) {
+  .product-image {
+    max-width: 600px;
+    max-height: 700px;
+  }
+}

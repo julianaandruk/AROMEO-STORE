@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -11,6 +12,20 @@ import ConfirmOrder from "./pages/ConfirmOrder";
 import Success from "./pages/Success";
 
 function App() {
+  useEffect(() => {
+    const handlePageHide = (event) => {
+      if (!event.persisted) {
+        localStorage.clear(); // Tik kai kortelė UŽDAROMA
+      }
+    };
+
+    window.addEventListener("pagehide", handlePageHide);
+
+    return () => {
+      window.removeEventListener("pagehide", handlePageHide);
+    };
+  }, []);
+
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100 bg-sand text-brown font-sans">

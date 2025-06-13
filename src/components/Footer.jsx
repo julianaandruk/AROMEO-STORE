@@ -12,7 +12,7 @@ function Footer() {
   
             <div className="col-md-6 text-center text-md-end">
               <p className="mb-1">Контакты: +79898618898</p>
-              <p className="mb-1">Email: info@aromeo.mail.ru</p>
+              <p className="mb-1">Email: infoaromeo@gmail.com</p>
               <p className="mb-3">Адрес: Москва, Россия</p>
   
               {/* Mygtukai į Telegram ir WhatsApp */}

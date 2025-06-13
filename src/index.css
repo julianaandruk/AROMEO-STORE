@@ -980,3 +980,31 @@ main {
     max-height: 700px;
   }
 }
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #25D366 !important;
+  color: white !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+}
+
+.telegram-btn {
+  background-color: #0088cc;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.telegram-btn:hover {
+  background-color: #0088cc !important;
+  color: white !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 136, 204, 0.3);
+}

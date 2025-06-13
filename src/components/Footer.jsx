@@ -29,7 +29,7 @@ function Footer() {
             </a>
 
             <a
-                href="https://wa.me/37064855934"
+                href="https://wa.me/79898618898"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp d-flex align-items-center gap-2"
